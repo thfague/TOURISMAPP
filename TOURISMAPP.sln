@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TOURISMAPP", "WpfApp1\TOURISMAPP.csproj", "{66DA5435-0F3E-4ACD-9416-0BF9257ED148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TOURISMAPPTest", "TOURISMAPPTest\TOURISMAPPTest.csproj", "{C845A0C7-0E7F-4E20-8620-9BBFFC5BFD1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66DA5435-0F3E-4ACD-9416-0BF9257ED148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66DA5435-0F3E-4ACD-9416-0BF9257ED148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66DA5435-0F3E-4ACD-9416-0BF9257ED148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66DA5435-0F3E-4ACD-9416-0BF9257ED148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C845A0C7-0E7F-4E20-8620-9BBFFC5BFD1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C845A0C7-0E7F-4E20-8620-9BBFFC5BFD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C845A0C7-0E7F-4E20-8620-9BBFFC5BFD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C845A0C7-0E7F-4E20-8620-9BBFFC5BFD1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2731C2E-9055-4393-9A9C-B4345652ACB2}
+	EndGlobalSection
+EndGlobal

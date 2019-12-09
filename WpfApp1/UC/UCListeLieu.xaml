@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="WpfApp1.UCListeLieu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+            <Grid>
+                <Border CornerRadius="5 5 5 5" BorderThickness="1" BorderBrush="DarkGray"/>
+                <ContentPresenter Content = "{TemplateBinding Content}" HorizontalAlignment = "Center" VerticalAlignment = "Center" />
+            </Grid>
+        </ControlTemplate>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Image Source="pack://application:,,,/TOURISMAPP;component/Images/FEAPP.jpg" Stretch="Fill">
+            <Image.BitmapEffect>
+                <BlurBitmapEffect Radius="7"/>
+            </Image.BitmapEffect>
+        </Image>
+
+        <Grid Background="Black" Width="650" Height="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="LISTE DES LIEUX" TextAlignment="Center" FontSize="20" Foreground="White" Grid.ColumnSpan="3" Grid.Row="0"/>
+
+            <TextBlock Name="errorMessage" VerticalAlignment="Center" TextAlignment="Center" FontSize="17" Foreground="White" Grid.Row="1" Grid.ColumnSpan="3"/>
+            <TextBlock Name="errorMessage2" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Foreground="Red" Grid.Row="0" Grid.Column="0"/>
+
+            <Button Width="65" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="2"  Click="search_Click">
+                <TextBlock TextAlignment="Left" FontSize="12" Foreground="Black" Width="64">Rechercher</TextBlock>
+            </Button>
+            <TextBox Name="searchBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" Margin="70,0,5,0"/>
+
+
+            <Button Content="Ajouter" Style="{StaticResource ButtonStyle}" Template="{StaticResource ButtonTemplate}" Click="ajouterLieu_Click" Grid.Row="2" Grid.Column="0"/>
+
+            <Button Content="Supprimer" Style="{StaticResource ButtonStyle}" Template="{StaticResource ButtonTemplate}" Click="supprimerLieu_Click" Grid.Row="2" Grid.Column="1"/>
+
+            <Button Content="Retour" Style="{StaticResource ButtonStyle}" Template="{StaticResource ButtonTemplate}" Click="Retour_Click" Grid.Row="2" Grid.Column="2"/>
+
+            <ListView Grid.ColumnSpan="3" Grid.Row="1" Name="ListLieu" HorizontalContentAlignment="Stretch" Background="Transparent" Margin="0,0,0,10">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Image Source="pack://application:,,,/TOURISMAPP;component/Images/LogoSimpleBlancPNG.png" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50"/>
+                            <TextBlock Text="{Binding Titre}" FontWeight="DemiBold" FontSize="15" TextWrapping="Wrap" MaxWidth="500" Grid.Column="1" Grid.Row="0" Foreground="White"/>
+                            <TextBlock Text="{Binding Description}" FontStyle="Italic" TextWrapping="Wrap" MaxWidth="500" Grid.Column="1" Grid.Row="1" Foreground="White"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+    
+</UserControl>
